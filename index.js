@@ -1,87 +1,25 @@
-/*//Finding the diagonal of a square with a side given
-function diagonalSquare(){
-    let side = 9;
-  
-console.log(side * Math.sqrt(2));
-};
-diagonalSquare();
-
-
-//Find area of a triangle 
-function areaTriangle(){
-    let sideA= 5;
-    let sideB= 6;
-    let sideC= 7;
-    //calculate the semi-perimeter
-    let semiP = (sideA + sideB + sideC)/2; 
-    //calculate the area
-    let area= Math.sqrt( semiP * (semiP - sideA) * (semiP - sideB) * (semiP - sideC));
-    console.log(`The area of a triangle is ${area}`);
-}
-areaTriangle();
-
-//circumference and surface area of a circle
-let circumCircle = () =>{
-    let radius = 4;
-    const pi = Math.PI;
-    let circumference = (2 * pi * radius);
-    console.log('circumference of a circle is ' + circumference);
-}
-circumCircle();
-// surface area of a circle 
-let surfaceAreaCircle = () =>{
-    let radius = 4;
-    const pi = Math.PI;
-    let area = ( pi *  Math.pow(radius, 2));
-    console.log('Surface area of a circle is ' + area);
-}
-surfaceAreaCircle()
-
-
-//Conditional statements and loops
-function largestInt(x ,y){
-    if(x > y){
-    console.log(x + ' is the largest of the ' + y);
-    }else{
-        console.log(y + ' is the largest of the ' + x);
-    }
-}
-largestInt(9,15);
-//check if an even or odd number
-
-function check(n){
-    if(n % 2 == 0){
-        console.log('Even number');
-    }else{
-        console.log('Odd Number')
-    }
-}
-check(9);
-*/
-
 // funuction for addition 
 function addition(x,y){
         return x + y;
-     }
-//addition(n,y);
+    }
 
 //function for subtraction
 function subtraction(x,y){
     return x-y;
 }
-//subtraction(n,y);
+
 
 // function for muliplication
 function multiply(x,y){
 return x * y;
 }
-//multiply(n,y);
 
 // function for division
 function division(x,y){
     return x/y;
 }
-//division(n,y);
+
+
 class Calculator{
     constructor(previousOperandTextElement,currentOperandTextElement){
         this.previousOperandTextElement = previousOperandTextElement;
@@ -156,7 +94,6 @@ const deleteButtons = document.querySelector('[data-delete]');
 const allClearButtons = document.querySelector('[data-all-clear]');
 const previousOperandTextElement = document.querySelector('[data-previous-operand]');
 const currentOperandTextElement = document.querySelector('[data-current-operand]');
-
 const calculator = new Calculator(previousOperandTextElement,currentOperandTextElement);
 
 //listening for click for numbers
@@ -166,13 +103,15 @@ numberButtons.forEach(button =>{
         calculator.updateDisplay();
     });
 });
-//listeneing for click for operations
+
+//listneing for click for operations
 operationButtons.forEach(button =>{
     button.addEventListener('click', ()=>{
         calculator.chooseoperation(button.innerText);
         calculator.updateDisplay();
     });
 });
+
 //listening for a click for equals
 equalsButtons.addEventListener('click',() =>{
         calculator.compute();
@@ -189,5 +128,4 @@ allClearButtons.addEventListener('click',() =>{
 deleteButtons.addEventListener('click',() =>{
     calculator.delete();
     calculator.updateDisplay();
-
 });
